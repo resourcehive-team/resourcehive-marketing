@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   },
   description:
     "Discover, share, and book resources across your university community with ResourceHive.",
+  icons: {
+    icon: [{ url: "/resourcehive-mark.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     title: "ResourceHive — Share more across campus",
     description:
