@@ -38,7 +38,10 @@ export default function ContactPage() {
             href="https://github.com/resourcehive-team/resourcehive/issues"
             target="_blank"
             rel="noreferrer"
-            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "mt-6 h-10 rounded-none border-ink bg-transparent text-ink hover:bg-ink hover:text-paper")}
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "mt-6 h-10 rounded-none !border-ink !bg-transparent !text-ink hover:!bg-ink hover:!text-paper focus-visible:!bg-ink focus-visible:!text-paper",
+            )}
           >
             Contact the project team
             <ArrowUpRight aria-hidden="true" />

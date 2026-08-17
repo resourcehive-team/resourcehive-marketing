@@ -133,7 +133,10 @@ export default function HomePage() {
               </Link>
               <Link
                 href="#how-it-works"
-                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-none border-paper/30 bg-transparent px-5 text-paper hover:bg-paper hover:text-ink")}
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "rounded-none !border-paper/30 !bg-transparent px-5 !text-paper hover:!bg-paper hover:!text-ink focus-visible:!bg-paper focus-visible:!text-ink",
+                )}
               >
                 See how it works
               </Link>
@@ -142,7 +145,7 @@ export default function HomePage() {
 
           <div className="relative min-h-[26rem] overflow-hidden bg-clay lg:min-h-[34rem]">
             <Image
-              src="/resourcehive-cover.png"
+              src="/resourcehive-cover-editorial.png"
               alt="ResourceHive being used in a university lecture hall"
               fill
               className="object-cover"
@@ -249,7 +252,10 @@ export default function HomePage() {
             </p>
             <Link
               href="/contact"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "mt-10 rounded-none border-paper/30 bg-transparent px-5 text-paper hover:bg-paper hover:text-ink")}
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "mt-10 rounded-none !border-paper/30 !bg-transparent px-5 !text-paper hover:!bg-paper hover:!text-ink focus-visible:!bg-paper focus-visible:!text-ink",
+              )}
             >
               Organization onboarding
               <ArrowRight aria-hidden="true" />
@@ -323,7 +329,10 @@ export default function HomePage() {
               </Link>
               <Link
                 href={appPath("/login")}
-                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-none border-ink bg-transparent px-5 text-ink hover:bg-ink hover:text-paper")}
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "rounded-none !border-ink !bg-transparent px-5 !text-ink hover:!bg-ink hover:!text-paper focus-visible:!bg-ink focus-visible:!text-paper",
+                )}
               >
                 Log in
               </Link>
