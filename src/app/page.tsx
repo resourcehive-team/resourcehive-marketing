@@ -1,69 +1,105 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, CalendarCheck2, PackageCheck, UsersRound } from "lucide-react";
 
-export default function Home() {
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="site-shell">
+      <section className="hero-grid overflow-hidden border-x border-white/10">
+        <header className="flex h-20 items-center justify-between border-b border-white/10 px-5 sm:px-8 lg:px-10">
+          <Link href="/" className="flex items-center gap-3" aria-label="ResourceHive home">
+            <Image src="/resourcehive-logo.png" alt="" width={34} height={34} priority />
+            <span className="text-lg font-semibold tracking-tight text-white">
+              Resource<span className="text-primary">Hive</span>
+            </span>
+          </Link>
+
+          <nav className="hidden items-center gap-8 text-sm text-white/60 md:flex" aria-label="Primary navigation">
+            <Link className="transition-colors hover:text-white" href="#features">Features</Link>
+            <Link className="transition-colors hover:text-white" href="#how-it-works">How it works</Link>
+            <Link className="transition-colors hover:text-white" href="#for-organizations">For organizations</Link>
+          </nav>
+
+          <Link
+            href={`${appUrl}/login`}
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "border-white/15 bg-white/5 px-4 text-white hover:bg-white/10")}
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Sign in
+          </Link>
+        </header>
+
+        <div className="px-5 pb-16 pt-16 sm:px-8 sm:pt-20 lg:px-10 lg:pb-20 lg:pt-24">
+          <div className="mx-auto max-w-4xl text-center">
+            <Badge variant="outline" className="h-7 border-primary/30 bg-primary/10 px-3 text-primary">
+              Built for university communities
+            </Badge>
+            <h1 className="mx-auto mt-6 max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+              Everything your campus has, shared better.
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-7 text-white/60 sm:text-lg">
+              ResourceHive gives departments, clubs, and students one trusted place to discover, share, and book the resources already around them.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                href={`${appUrl}/register`}
+                className={cn(buttonVariants({ size: "lg" }), "h-11 bg-primary px-5 text-black shadow-[0_0_40px_rgba(246,170,28,0.22)] hover:bg-primary/90")}
+              >
+                Get started
+                <ArrowRight aria-hidden="true" />
+              </Link>
+              <Link
+                href="#how-it-works"
+                className={cn(buttonVariants({ variant: "ghost", size: "lg" }), "h-11 px-5 text-white/75 hover:bg-white/5 hover:text-white")}
+              >
+                See how it works
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative mx-auto mt-14 max-w-5xl">
+            <div className="absolute inset-x-20 -top-6 h-32 bg-primary/25 blur-3xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 p-2 shadow-2xl shadow-black/40">
+              <div className="relative aspect-[16/8.2] min-h-64 overflow-hidden rounded-xl">
+                <Image
+                  src="/resourcehive-cover.png"
+                  alt="A university lecture hall with the ResourceHive mobile resource catalogue in view"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10" />
+                <div className="absolute inset-x-4 bottom-4 grid gap-2 sm:inset-x-6 sm:bottom-6 sm:grid-cols-3">
+                  {[
+                    [PackageCheck, "Discover", "Find resources across campus"],
+                    [CalendarCheck2, "Book", "Reserve with clear availability"],
+                    [UsersRound, "Share", "Keep access within your community"],
+                  ].map(([Icon, title, description]) => {
+                    const FeatureIcon = Icon as typeof PackageCheck;
+                    return (
+                      <div key={String(title)} className="hidden items-center gap-3 rounded-xl border border-white/10 bg-black/55 p-3 backdrop-blur-md sm:flex">
+                        <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-primary text-black">
+                          <FeatureIcon className="size-4" aria-hidden="true" />
+                        </span>
+                        <span className="text-left">
+                          <span className="block text-sm font-medium text-white">{String(title)}</span>
+                          <span className="block text-xs text-white/55">{String(description)}</span>
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
