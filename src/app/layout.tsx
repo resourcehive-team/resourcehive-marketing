@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
-        width: 1728,
-        height: 910,
-        alt: "ResourceHive — Everything your campus has, shared better.",
+        url: "/og-editorial.png",
+        width: 1731,
+        height: 909,
+        alt: "ResourceHive — A shared campus, within reach.",
       },
     ],
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "ResourceHive — Share more across campus",
     description:
       "Discover, share, and book resources across your university community with ResourceHive.",
-    images: ["/og.png"],
+    images: ["/og-editorial.png"],
   },
 };
 

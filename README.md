@@ -21,4 +21,4 @@ pnpm --filter marketing lint
 pnpm --filter marketing build
 ```
 
-The site uses Next.js, Tailwind CSS, shadcn/ui components already used by the main application, and selected Magic UI components installed through the shadcn registry.
+The site uses Next.js, Tailwind CSS, and shadcn/ui components already used by the main application.

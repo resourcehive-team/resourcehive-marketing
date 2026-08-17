@@ -27,39 +27,39 @@ export default function ContactPage() {
       title="Bring ResourceHive to your organization."
       introduction="ResourceHive is being built for university departments, clubs, and student communities that want a clearer way to share what they already have."
     >
-      <div className="not-prose mt-12 grid gap-4 sm:grid-cols-2">
-        <div className="flex min-h-64 flex-col rounded-2xl border border-white/10 bg-white/[0.025] p-6">
-          <Building2 className="size-6 text-primary" aria-hidden="true" />
-          <h2 className="mt-8 text-xl font-medium text-white">Organization onboarding</h2>
-          <p className="mt-3 flex-1 text-sm leading-6 text-white/50">
+      <div className="not-prose mt-12 grid border-l border-t border-line sm:grid-cols-2">
+        <div className="flex min-h-72 flex-col border-b border-r border-line p-6">
+          <Building2 className="size-6 stroke-[1.3]" aria-hidden="true" />
+          <h2 className="font-serif mt-10 text-3xl tracking-[-0.03em]">Organization onboarding</h2>
+          <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
             Tell the project team about your university organization, the resources you manage, and who needs access.
           </p>
           <Link
             href="https://github.com/resourcehive-team/resourcehive/issues"
             target="_blank"
             rel="noreferrer"
-            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "mt-6 h-10 border-white/15 bg-white/5 text-white hover:bg-white/10")}
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "mt-6 h-10 rounded-none border-ink bg-transparent text-ink hover:bg-ink hover:text-paper")}
           >
             Contact the project team
             <ArrowUpRight aria-hidden="true" />
           </Link>
         </div>
 
-        <div className="flex min-h-64 flex-col rounded-2xl border border-white/10 bg-white/[0.025] p-6">
-          <UserRoundPlus className="size-6 text-primary" aria-hidden="true" />
-          <h2 className="mt-8 text-xl font-medium text-white">Individual access</h2>
-          <p className="mt-3 flex-1 text-sm leading-6 text-white/50">
+        <div className="flex min-h-72 flex-col border-b border-r border-line bg-[#e5b94c] p-6">
+          <UserRoundPlus className="size-6 stroke-[1.3]" aria-hidden="true" />
+          <h2 className="font-serif mt-10 text-3xl tracking-[-0.03em]">Individual access</h2>
+          <p className="mt-3 flex-1 text-sm leading-6 text-ink/65">
             Create an account, then request membership in the organizations that already use ResourceHive.
           </p>
           <Link
             href={appPath("/signup")}
-            className={cn(buttonVariants({ size: "lg" }), "mt-6 h-10 bg-primary text-black hover:bg-primary/90")}
+            className={cn(buttonVariants({ size: "lg" }), "mt-6 h-10 rounded-none bg-ink text-paper hover:bg-ink/80")}
           >
             Create an account
           </Link>
         </div>
       </div>
-      <p className="mt-8 text-sm text-white/35">
+      <p className="mt-8 text-sm text-muted-foreground">
         The public contact workflow is still being prepared. Project enquiries currently go through the ResourceHive repository so they remain visible to the team.
       </p>
     </ContentPage>

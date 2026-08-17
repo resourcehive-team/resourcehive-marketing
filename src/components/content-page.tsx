@@ -15,10 +15,10 @@ export function ContentPage({
   children: ReactNode;
 }) {
   return (
-    <main className="site-shell">
+    <main>
       <SiteHeader />
-      <div className="border-x border-white/10 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-        <article className="prose-page mx-auto max-w-3xl">
+      <div className="page-grid border-b border-line py-16 sm:py-20 lg:py-24">
+        <article className="prose-page col-span-full lg:col-span-8 lg:col-start-3">
           <p className="section-kicker text-left">{eyebrow}</p>
           <h1>{title}</h1>
           <p className="lead">{introduction}</p>
