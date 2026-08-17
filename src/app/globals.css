@@ -1,10 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --font-sans: var(--font-geist);
+  --font-serif: var(--font-instrument-serif);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -21,30 +20,38 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-destructive: var(--destructive);
-  --radius-sm: calc(var(--radius) * 0.75);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) * 1.25);
-  --radius-xl: calc(var(--radius) * 1.6);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-line: var(--line);
+  --color-clay: var(--clay);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
 }
 
 :root {
-  --background: #0b0c0e;
-  --foreground: #f7f5ef;
-  --card: #111216;
-  --card-foreground: #f7f5ef;
-  --primary: #f6aa1c;
-  --primary-foreground: #15110a;
-  --secondary: #1a1b20;
-  --secondary-foreground: #f7f5ef;
-  --muted: #17181c;
-  --muted-foreground: #a7a6a1;
-  --accent: #222329;
-  --accent-foreground: #f7f5ef;
-  --border: rgb(255 255 255 / 0.1);
-  --input: rgb(255 255 255 / 0.14);
-  --ring: #f6aa1c;
-  --destructive: #ef4444;
-  --radius: 0.75rem;
+  --background: #f3efe7;
+  --foreground: #171715;
+  --paper: #f3efe7;
+  --ink: #1c1d1d;
+  --line: #c9c3b8;
+  --clay: #c96f48;
+  --card: #f3efe7;
+  --card-foreground: #171715;
+  --primary: #171715;
+  --primary-foreground: #f3efe7;
+  --secondary: #e8e2d8;
+  --secondary-foreground: #171715;
+  --muted: #e8e2d8;
+  --muted-foreground: #6f6b63;
+  --accent: #e6a820;
+  --accent-foreground: #171715;
+  --border: #c9c3b8;
+  --input: #b8b1a5;
+  --ring: #171715;
+  --destructive: #b42318;
+  --radius: 0;
 }
 
 * {
@@ -57,9 +64,7 @@ html {
 
 body {
   min-width: 320px;
-  background:
-    radial-gradient(circle at 50% 0%, rgb(246 170 28 / 0.08), transparent 30rem),
-    #d8d4c7;
+  background: var(--background);
   color: var(--foreground);
 }
 
@@ -68,103 +73,29 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-.site-shell {
-  width: min(100% - 24px, 1280px);
-  margin: 24px auto;
-  overflow: hidden;
-  border: 1px solid rgb(255 255 255 / 0.6);
-  border-radius: 24px;
-  background: var(--background);
-  box-shadow: 0 24px 80px rgb(25 23 17 / 0.2);
+::selection {
+  background: var(--accent);
+  color: var(--ink);
 }
 
-.hero-grid {
-  background-image:
-    linear-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px);
-  background-size: 72px 72px;
-  background-position: center top;
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 1rem;
+  width: min(100% - 2.5rem, 1440px);
+  margin-inline: auto;
 }
 
-.section-kicker {
-  color: var(--primary);
-  font-size: 0.75rem;
+.eyebrow {
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
-  text-align: center;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.section-title {
-  max-width: 48rem;
-  margin: 1rem auto 0;
-  color: white;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.08;
-  text-align: center;
-  text-wrap: balance;
-}
-
-.section-copy {
-  max-width: 40rem;
-  margin: 1.25rem auto 0;
-  color: rgb(255 255 255 / 0.52);
-  font-size: 1rem;
-  line-height: 1.75;
-  text-align: center;
-  text-wrap: pretty;
-}
-
-.prose-page > h1 {
-  max-width: 46rem;
-  margin-top: 1rem;
-  color: white;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 1.03;
-  text-wrap: balance;
-}
-
-.prose-page > .lead {
-  max-width: 42rem;
-  margin-top: 1.5rem;
-  color: rgb(255 255 255 / 0.55);
-  font-size: 1.125rem;
-  line-height: 1.75;
-}
-
-.prose-page > h2 {
-  margin-top: 3rem;
-  color: white;
-  font-size: 1.35rem;
-  font-weight: 550;
-  letter-spacing: -0.02em;
-}
-
-.prose-page > h2 + p,
-.prose-page > .notice,
-.prose-page > p:not(.lead) {
-  margin-top: 1rem;
-  color: rgb(255 255 255 / 0.52);
-  line-height: 1.8;
-}
-
-.prose-page > .notice {
-  border-left: 2px solid var(--primary);
-  padding: 0.75rem 1rem;
-  background: rgb(246 170 28 / 0.06);
-  color: rgb(255 255 255 / 0.65);
-  font-size: 0.875rem;
-}
-
-@media (max-width: 640px) {
-  .site-shell {
-    width: 100%;
-    margin: 0;
-    border: 0;
-    border-radius: 0;
+@media (min-width: 768px) {
+  .page-grid {
+    width: min(100% - 4rem, 1440px);
+    column-gap: 1.5rem;
   }
 }
