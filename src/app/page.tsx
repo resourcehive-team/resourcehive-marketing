@@ -104,9 +104,9 @@ export default function HomePage() {
       <section className="page-grid border-b border-line py-16 sm:py-20 lg:py-24">
         <p className="eyebrow col-span-full">RESOURCE SHARING / UNIVERSITY COMMUNITIES</p>
         <h1 className="font-serif col-span-full mt-6 max-w-5xl text-[clamp(3.8rem,8.5vw,8.5rem)] leading-[0.84] tracking-[-0.055em] text-ink">
-          A <span className="text-clay">shared campus</span>,
+          A shared campus,
           <br />
-          within <span className="underline decoration-[0.05em] underline-offset-[0.08em]">reach</span>.
+          within reach.
         </h1>
       </section>
 

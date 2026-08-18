@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 66 66" fill="none">
-  <title>ResourceHive mark</title>
-  <g>
-    <path d="M32 3 47 11.5v17L32 37 17 28.5v-17L32 3Z" fill="#D8A43A" />
-    <path d="m17 28.5 15 8.5v17L17 62.5 2 54V37l15-8.5Z" fill="#CAD1C2" />
-    <path d="m47 28.5 15 8.5v17l-15 8.5L32 54V37l15-8.5Z" fill="#B76548" />
-  </g>
+<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="12" height="12" fill="#1C1C1D"/>
+<rect x="2" y="2" width="2" height="8" fill="#D9D9D9"/>
+<rect x="8" y="2" width="2" height="8" fill="#B76548"/>
+<rect x="5" y="2" width="2" height="8" fill="#D8A43A"/>
 </svg>
