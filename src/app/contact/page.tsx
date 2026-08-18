@@ -4,7 +4,6 @@ import { ArrowUpRight, Building2, UserRoundPlus } from "lucide-react";
 
 import { ContentPage } from "@/components/content-page";
 import { buttonVariants } from "@/components/ui/button";
-import links from "@/config/links.json";
 import { appPath } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +21,12 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const contactEmail = process.env.CONTACT_EMAIL;
+
+  if (!contactEmail) {
+    throw new Error("CONTACT_EMAIL is not configured.");
+  }
+
   return (
     <ContentPage
       eyebrow="Contact"
@@ -36,7 +41,7 @@ export default function ContactPage() {
             Tell the project team about your university organization, the resources you manage, and who needs access.
           </p>
           <Link
-            href={links.contact}
+            href={`mailto:${contactEmail}`}
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "mt-6 h-10 rounded-none !border-ink !bg-transparent !text-ink hover:!bg-ink hover:!text-paper focus-visible:!bg-ink focus-visible:!text-paper",

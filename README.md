@@ -37,8 +37,9 @@ The marketing website is available at <http://localhost:5173>. Login and sign-up
 | --- | --- | --- |
 | `NEXT_PUBLIC_APP_URL` | Base URL of the separate ResourceHive SaaS application. Login and sign-up links are built from this URL. | `https://app.resourcehive.thisismalindu.com` |
 | `NEXT_PUBLIC_MARKETING_URL` | Canonical URL used for marketing-site metadata and social previews. | `http://localhost:5173` |
+| `CONTACT_EMAIL` | Email address used by the contact-page enquiry link. | `team@example.com` |
 
-Values should not include a trailing slash. Because these variables are exposed to the browser, do not store secrets in them.
+URL values should not include a trailing slash. Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser and must not contain secrets. The contact email is also visible to visitors through the rendered `mailto:` link.
 
 To connect the marketing site to a locally running copy of the SaaS application, override `NEXT_PUBLIC_APP_URL` in `.env` with that application's local origin.
 
@@ -61,8 +62,9 @@ Configure these environment variables for Production and any Preview environment
 ```dotenv
 NEXT_PUBLIC_APP_URL=https://app.resourcehive.thisismalindu.com
 NEXT_PUBLIC_MARKETING_URL=https://your-marketing-domain.example
+CONTACT_EMAIL=team@your-domain.example
 ```
 
-Set `NEXT_PUBLIC_MARKETING_URL` to the final public URL of this marketing website. After adding or changing either variable, redeploy so Next.js includes the values in the client bundle and generated metadata.
+Set `NEXT_PUBLIC_MARKETING_URL` to the final public URL of this marketing website. Set `CONTACT_EMAIL` to the address that should receive contact-page enquiries. Update all three variables in each deployment environment, then redeploy for the changes to take effect.
 
 The custom domain for the authenticated SaaS application is not assigned to this Vercel project; this website only sends login and sign-up traffic there.
