@@ -4,6 +4,7 @@ import { ArrowUpRight, Building2, UserRoundPlus } from "lucide-react";
 
 import { ContentPage } from "@/components/content-page";
 import { buttonVariants } from "@/components/ui/button";
+import links from "@/config/links.json";
 import { appPath } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
@@ -35,9 +36,7 @@ export default function ContactPage() {
             Tell the project team about your university organization, the resources you manage, and who needs access.
           </p>
           <Link
-            href="https://github.com/resourcehive-team/resourcehive/issues"
-            target="_blank"
-            rel="noreferrer"
+            href={links.contact}
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "mt-6 h-10 rounded-none !border-ink !bg-transparent !text-ink hover:!bg-ink hover:!text-paper focus-visible:!bg-ink focus-visible:!text-paper",
@@ -63,7 +62,7 @@ export default function ContactPage() {
         </div>
       </div>
       <p className="mt-8 text-sm text-muted-foreground">
-        The public contact workflow is still being prepared. Project enquiries currently go through the ResourceHive repository so they remain visible to the team.
+        The public contact workflow is still being prepared. Project enquiries currently go directly to the team by email.
       </p>
     </ContentPage>
   );
