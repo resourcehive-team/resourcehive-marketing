@@ -13,7 +13,7 @@ const navigation = [
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-line">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper">
       <div className="page-grid h-20 items-center">
         <div className="col-span-6 md:col-span-3">
           <Brand />
